@@ -70,11 +70,14 @@
             transition: all 0.3s ease;
             border: none;
             font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
         }
         
         .btn-primary:hover {
             background-color: var(--primary-hover);
             transform: translateY(-1px);
+            color: white;
         }
         
         .btn-secondary {
@@ -86,11 +89,14 @@
             border: 1px solid var(--primary-border);
             transition: all 0.3s ease;
             font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
         }
         
         .btn-secondary:hover {
             background-color: var(--primary-light);
             border-color: var(--primary-color);
+            color: var(--primary-color);
         }
         
         /* Apple-style cards */
@@ -101,6 +107,9 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             border: 1px solid rgba(0, 0, 0, 0.05);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         
         .card:hover {
@@ -144,6 +153,11 @@
             padding: 80px 0;
         }
         
+        .project-detail-section {
+            padding-top: 160px;
+            min-height: 80vh;
+        }
+        
         /* Language switcher */
         .lang-switcher a, .lang-switcher span {
             padding: 6px 12px;
@@ -172,6 +186,14 @@
             word-break: break-all;
             border: 1px solid rgba(0, 0, 0, 0.1);
             margin: 8px 0 16px;
+            display: block;
+        }
+        
+        .min-deposit-note {
+            font-size: 0.8rem;
+            color: #6b7280;
+            margin-top: -0.5rem;
+            margin-bottom: 0.75rem;
         }
         
         /* Mobile responsiveness */
@@ -186,6 +208,10 @@
             
             .card {
                 padding: 24px;
+            }
+            
+            .project-detail-section {
+                padding-top: 140px;
             }
         }
     </style>
@@ -242,7 +268,7 @@
             <p class="body-large mb-12 max-w-2xl mx-auto">
                 A pioneering startup based in the USA and Japan, dedicated to advancing humanoid robotics and nanorobotics for a better tomorrow.
             </p>
-            <a href="#projects" class="btn-primary inline-block">Explore Our Innovation</a>
+            <a href="#projects" class="btn-primary">Explore Our Innovation</a>
         </div>
     </section>
 
@@ -254,15 +280,18 @@
             </div>
             <div class="max-w-3xl mx-auto text-center">
                 <p class="body-large mb-8">
-                    Aether Robotics operates at the intersection of innovation and necessity, with primary operations in the <strong>United States</strong> and expanding presence in <strong>Japan</strong>.
+                    Aether Robotics is a pioneering startup with primary operations in the <strong>United States</strong> and expanding presence in <strong>Japan</strong>, operating at the forefront of innovation in <strong>Humanoid Robotics and Nanorobotics</strong>.
                 </p>
                 <p class="body-large mb-8">
-                    We specialize in <strong>humanoid robotics</strong> and <strong>nanorobotics</strong>, developing solutions that address critical challenges in healthcare, environmental sustainability, and industrial automation.
+                    Our mission is to harness the potential of these advanced technologies to address some of the world's most pressing challenges in healthcare, environmental sustainability, and industry.
+                </p>
+                <p class="body-large mb-8">
+                    We develop groundbreaking solutions, from nanobots targeting diseases and pollution to versatile humanoid robots enhancing construction, healthcare, and retail.
                 </p>
                 <p class="body-large mb-12">
-                    Our approach combines cutting-edge technology with thoughtful design, creating products that enhance human capability rather than replace it.
+                    This website serves as a comprehensive resource on our projects and vision. We believe in collaborative progress and invite you to learn more about our work and our values.
                 </p>
-                <a href="#values" class="btn-secondary">Discover Our Values</a>
+                <a href="#values" class="btn-secondary">Discover our core values →</a>
             </div>
         </div>
     </section>
@@ -270,7 +299,7 @@
     <section id="projects" class="section-padding bg-gray-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="section-title text-4xl md:text-5xl text-gray-900 mb-6">Innovation in Action</h2>
+                <h2 class="section-title text-4xl md:text-5xl text-gray-900 mb-6">What We Do: Our Projects</h2>
                 <div class="w-16 h-1 mx-auto mb-8" style="background-color: var(--primary-color);"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -278,55 +307,55 @@
                     <div class="project-icon">
                         <i class="fas fa-shield-virus fa-2x" style="color: var(--primary-color);"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Cancer & Virus Targeting</h3>
-                    <p class="text-gray-600 mb-6">Silicon-based nanobots designed for precise targeting of cancer cells and viruses, minimizing collateral damage to healthy tissue.</p>
-                    <a href="#project-cancer" class="text-sm font-medium" style="color: var(--primary-color);">Learn more →</a>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Targeting Cancer & Viruses</h3>
+                    <p class="text-gray-600 mb-6 flex-grow">Developing silicon-based nanobots to identify and target cancer cells and viruses, aiming for precise treatments while minimizing harm to healthy tissues.</p>
+                    <a href="#project-detail-cancer-viruses" class="text-sm font-medium" style="color: var(--primary-color);">Learn More</a>
                 </div>
                 
                 <div class="card">
                     <div class="project-icon">
                         <i class="fas fa-dna fa-2x" style="color: var(--primary-color);"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Aether A1 G-Repair</h3>
-                    <p class="text-gray-600 mb-4">Revolutionary nanotechnology for DNA repair enhancement, supporting cellular integrity and longevity.</p>
-                    <p class="text-xs text-gray-500 mb-6">Prototype: Q2 2028</p>
-                    <a href="#project-repair" class="text-sm font-medium" style="color: var(--primary-color);">Learn more →</a>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">🛡️ Aether A1 G-Repair</h3>
+                    <p class="text-gray-600 mb-2 flex-grow">A groundbreaking nanotechnology initiative (Project A1) focused on enhancing DNA repair processes. Key focuses include targeted enzyme delivery, supporting BER/NER pathways, and restoring genomic integrity.</p>
+                    <p class="text-sm text-gray-500 mb-6">Prototype projected: Q2 2028</p>
+                    <a href="#project-detail-g-repair" class="text-sm font-medium" style="color: var(--primary-color);">Learn More</a>
                 </div>
                 
                 <div class="card">
                     <div class="project-icon">
                         <i class="fas fa-leaf fa-2x" style="color: var(--primary-color);"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Environmental Restoration</h3>
-                    <p class="text-gray-600 mb-6">Nanobots engineered for oil spill cleanup and coral reef restoration, promoting ecological recovery.</p>
-                    <a href="#project-environment" class="text-sm font-medium" style="color: var(--primary-color);">Learn more →</a>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Environmental Nanobots</h3>
+                    <p class="text-gray-600 mb-6 flex-grow">Designing nanobots to clean oil spills and deliver life-saving treatments to coral reefs, promoting ecological health and sustainability.</p>
+                    <a href="#project-detail-environmental" class="text-sm font-medium" style="color: var(--primary-color);">Learn More</a>
                 </div>
                 
                 <div class="card">
                     <div class="project-icon">
                         <i class="fas fa-user-nurse fa-2x" style="color: var(--primary-color);"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Hanzō M.E.C</h3>
-                    <p class="text-gray-600 mb-6">Medical & Elderly Care humanoid robot providing companionship, health monitoring, and daily assistance.</p>
-                    <a href="#project-mec" class="text-sm font-medium" style="color: var(--primary-color);">Learn more →</a>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">🤖 Hanzō M.E.C</h3>
+                    <p class="text-gray-600 mb-6 flex-grow">Humanoid robot for Medical & Elderly Care (Project Z1). Key applications include companionship, daily task assistance, health monitoring, and reducing caregiver burden.</p>
+                    <a href="#project-detail-hanzo-mec" class="text-sm font-medium" style="color: var(--primary-color);">Learn More</a>
                 </div>
                 
                 <div class="card">
                     <div class="project-icon">
                         <i class="fas fa-hard-hat fa-2x" style="color: var(--primary-color);"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Hanzō C.E.M</h3>
-                    <p class="text-gray-600 mb-6">Construction & Manufacturing robot with enhanced stability and multitasking capabilities for industrial applications.</p>
-                    <a href="#project-cem" class="text-sm font-medium" style="color: var(--primary-color);">Learn more →</a>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">🤖 Hanzō C.E.M</h3>
+                    <p class="text-gray-600 mb-6 flex-grow">Humanoid robot for Construction & Manufacturing (Project Z1). Features four legs, 360° camera, four arms, and handles hazardous tasks safely.</p>
+                    <a href="#project-detail-hanzo-cem" class="text-sm font-medium" style="color: var(--primary-color);">Learn More</a>
                 </div>
                 
                 <div class="card">
                     <div class="project-icon">
-                        <i class="fas fa-shopping-cart fa-2x" style="color: var(--primary-color);"></i>
+                        <i class="fas fa-cash-register fa-2x" style="color: var(--primary-color);"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Hanzō R.A.I</h3>
-                    <p class="text-gray-600 mb-6">Retail Automation robot with integrated payment systems and advanced customer interaction capabilities.</p>
-                    <a href="#project-rai" class="text-sm font-medium" style="color: var(--primary-color);">Learn more →</a>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">🤖 Hanzō R.A.I</h3>
+                    <p class="text-gray-600 mb-6 flex-grow">Humanoid robot for Retail Automation & Innovation (Project Z1). Features integrated payments (Card, Crypto, Cash) and item scanning via embedded camera.</p>
+                    <a href="#project-detail-hanzo-rai" class="text-sm font-medium" style="color: var(--primary-color);">Learn More</a>
                 </div>
             </div>
         </div>
@@ -335,7 +364,7 @@
     <section id="values" class="section-padding bg-white">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="section-title text-4xl md:text-5xl text-gray-900 mb-6">Our Principles</h2>
+                <h2 class="section-title text-4xl md:text-5xl text-gray-900 mb-6">Our Core Values</h2>
                 <div class="w-16 h-1 mx-auto mb-8" style="background-color: var(--primary-color);"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -344,47 +373,47 @@
                         <i class="fas fa-brain fa-2x" style="color: var(--primary-color);"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-900 mb-4">AI-Driven Innovation</h3>
-                    <p class="text-gray-600">Leveraging artificial intelligence to create smarter, more adaptive robotic systems that evolve with user needs.</p>
+                    <p class="text-gray-600">Embracing AI to enhance our nanorobots and humanoid systems, ensuring smarter, faster, and more impactful solutions.</p>
                 </div>
                 
                 <div class="text-center">
                     <div class="value-icon">
                         <i class="fas fa-seedling fa-2x" style="color: var(--primary-color);"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Sustainable Technology</h3>
-                    <p class="text-gray-600">Developing solutions that address environmental challenges while maintaining minimal ecological footprint.</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Sustainability & Responsibility</h3>
+                    <p class="text-gray-600">Focusing on nano-robots that address critical environmental challenges like oil spills and coral reef restoration with minimal ecological impact.</p>
                 </div>
                 
                 <div class="text-center">
                     <div class="value-icon">
                         <i class="fas fa-users fa-2x" style="color: var(--primary-color);"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Human-Centered Design</h3>
-                    <p class="text-gray-600">Creating technology that enhances human capability and improves quality of life across all demographics.</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Collaboration & Ecosystem</h3>
+                    <p class="text-gray-600">Fostering partnerships across public, private, and research sectors to drive progress and build a thriving innovation ecosystem.</p>
                 </div>
                 
                 <div class="text-center">
                     <div class="value-icon">
                         <i class="fas fa-lightbulb fa-2x" style="color: var(--primary-color);"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Continuous Innovation</h3>
-                    <p class="text-gray-600">Fostering a culture of creativity and learning that drives breakthrough discoveries in robotics.</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Empowering Talent & Creativity</h3>
+                    <p class="text-gray-600">Nurturing a culture of creativity and continuous learning, equipping our team with skills for an AI-driven economy.</p>
                 </div>
                 
                 <div class="text-center">
                     <div class="value-icon">
                         <i class="fas fa-globe fa-2x" style="color: var(--primary-color);"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Global Impact</h3>
-                    <p class="text-gray-600">Developing technologies that create positive change for communities worldwide through healthcare and environmental solutions.</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Impact for Public Good</h3>
+                    <p class="text-gray-600">Striving to create technologies that improve lives through targeted healthcare, environmental protection, and societal benefits.</p>
                 </div>
                 
                 <div class="text-center">
                     <div class="value-icon">
-                        <i class="fas fa-shield-alt fa-2x" style="color: var(--primary-color);"></i>
+                        <i class="fas fa-shield-halved fa-2x" style="color: var(--primary-color);"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Ethical Excellence</h3>
-                    <p class="text-gray-600">Maintaining the highest standards of safety, transparency, and ethical responsibility in all our innovations.</p>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Ethical Development & Safety</h3>
+                    <p class="text-gray-600">Committing to the responsible design, development, and deployment of our technologies, prioritizing safety, transparency, and ethical considerations in all we do.</p>
                 </div>
             </div>
         </div>
@@ -393,40 +422,73 @@
     <section id="contribute" class="section-padding bg-gray-50">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="section-title text-4xl md:text-5xl text-gray-900 mb-6">Support Innovation</h2>
+                <h2 class="section-title text-4xl md:text-5xl text-gray-900 mb-6">Support Our Vision</h2>
                 <div class="w-16 h-1 mx-auto mb-8" style="background-color: var(--primary-color);"></div>
-                <p class="body-large">Your contribution accelerates the development of transformative robotic technologies that will shape the future.</p>
+                <p class="body-large">Your contribution accelerates the development of transformative robotic technologies. Help us build the future by donating securely through one of the methods below.</p>
             </div>
             
             <div class="card mb-8">
-                <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center">Secure Payments</h3>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4 text-center border-b pb-2">Secure Online Payments</h3>
+                <p class="text-gray-600 text-sm mb-6 text-center">Donate easily using PayPal or Stripe. Both platforms use industry-standard encryption and robust security measures to protect your financial information, ensuring your donation is safe and secure.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="https://www.paypal.com/ncp/payment/ZVZ9EEK4WTQPA" target="_blank" rel="noopener noreferrer" class="btn-primary text-center">
-                        <i class="fab fa-paypal mr-2"></i>PayPal
+                    <a href="https://www.paypal.com/ncp/payment/ZVZ9EEK4WTQPA" target="_blank" rel="noopener noreferrer" class="btn-primary text-center inline-flex items-center justify-center">
+                        <i class="fab fa-paypal mr-2"></i>Donate with PayPal
                     </a>
-                    <a href="https://buy.stripe.com/6oEdSg5whbJ02TS5kk" target="_blank" rel="noopener noreferrer" class="btn-primary text-center">
-                        <i class="fas fa-credit-card mr-2"></i>Stripe
+                    <a href="https://buy.stripe.com/6oEdSg5whbJ02TS5kk" target="_blank" rel="noopener noreferrer" class="btn-primary text-center inline-flex items-center justify-center">
+                        <i class="fas fa-credit-card mr-2"></i>Donate with Stripe
                     </a>
                 </div>
             </div>
             
             <div class="card">
-                <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center">Cryptocurrency</h3>
-                <div class="space-y-6">
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center border-b pb-2">Cryptocurrency Donations</h3>
+                <p class="text-gray-600 text-sm mb-6 text-center">We welcome contributions via various cryptocurrencies. Please ensure you send the correct currency to the corresponding address and network.</p>
+                <div class="space-y-6 text-left">
                     <div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Ethereum & ERC-20 Tokens</h4>
-                        <p class="text-sm text-gray-600 mb-2">Networks: Optimism, Ethereum, Base, Arbitrum, Polygon, and more</p>
+                        <h4 class="text-lg font-semibold text-gray-700 mb-1">Ethereum-Based (ERC-20 & Others)</h4>
+                        <p class="text-sm text-gray-600 mb-2">Accepted Networks: Optimism, Ethereum, Base, Arbitrum, Gravity, Polygon, Zora, Blast, Degen, Avalanche, BSC, Apechain, Ink, Sanko, Berachain, and Unichain.</p>
+                        <p class="text-sm text-gray-700 font-medium">Wallet Address:</p>
                         <code class="crypto-address">0x296f4f5F683A5Ba4B6b15Aa7e5850A51AC9edb6f</code>
                     </div>
                     
                     <div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Bitcoin (BTC)</h4>
+                        <h4 class="text-lg font-semibold text-gray-700 mb-1">XRP (Ripple)</h4>
+                        <p class="text-sm text-gray-700 font-medium">Deposit Address:</p>
+                        <code class="crypto-address">rLHzPsX6oXkzU2qL12kHCH8G8cnZv1rBJh</code>
+                        <p class="text-sm text-gray-700 font-medium">Destination Tag:</p>
+                        <code class="crypto-address">3141899729</code>
+                        <p class="min-deposit-note">Minimum deposit: 0.00010 XRP</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-700 mb-1">Cardano (ADA)</h4>
+                        <p class="text-sm text-gray-700 font-medium">Wallet Address:</p>
+                        <code class="crypto-address">addr1qxuskptlcqtxpqzecxrftc7fhgxqxnaqlpmp5tekwu4d9wlrzr27g03klu862usxqsru794d03gzkk8n86ta34n85z0s7etrt7</code>
+                        <p class="min-deposit-note">Minimum deposit: 1.0 ADA</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-700 mb-1">Solana (SOL & SPL Tokens)</h4>
+                        <p class="text-sm text-gray-700 font-medium">Wallet Address:</p>
+                        <code class="crypto-address">5s8zbZN1NEkT7crUg1wtJJDt9Usiz5pj6Lda1qCEJWgX</code>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-700 mb-1">Bitcoin (BTC)</h4>
+                        <p class="text-sm text-gray-700 font-medium">Wallet Address:</p>
                         <code class="crypto-address">bc1qw059p5f02jhmrskt370r5f09mtscwmwrqzr9hy</code>
                     </div>
                     
                     <div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Solana (SOL)</h4>
-                        <code class="crypto-address">5s8zbZN1NEkT7crUg1wtJJDt9Usiz5pj6Lda1qCEJWgX</code>
+                        <h4 class="text-lg font-semibold text-gray-700 mb-1">Dogecoin (DOGE)</h4>
+                        <p class="text-sm text-gray-700 font-medium">Wallet Address:</p>
+                        <code class="crypto-address">DCbGxbUi2f2LU5hwtbPLJgkJW4r17CH9xF</code>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-700 mb-1">Litecoin (LTC)</h4>
+                        <p class="text-sm text-gray-700 font-medium">Wallet Address:</p>
+                        <code class="crypto-address">ltc1qh2ekfp53tx4pkkwxpl5t8dafeer4rayjkm4f4p</code>
                     </div>
                 </div>
             </div>
@@ -435,29 +497,125 @@
 
     <section id="contact" class="section-padding bg-white">
         <div class="max-w-3xl mx-auto px-6 text-center">
-            <h2 class="section-title text-4xl md:text-5xl text-gray-900 mb-6">Get in Touch</h2>
+            <h2 class="section-title text-4xl md:text-5xl text-gray-900 mb-6">Get In Touch</h2>
             <div class="w-16 h-1 mx-auto mb-12" style="background-color: var(--primary-color);"></div>
             <div class="card">
-                <p class="body-large mb-6">Ready to collaborate, invest, or learn more about our innovations?</p>
-                <a href="mailto:aetherrobotics@proton.me" class="text-2xl font-medium mb-6 block" style="color: var(--primary-color);">aetherrobotics@proton.me</a>
-                <p class="text-gray-600">We're excited to hear from you.</p>
+                <p class="text-lg text-gray-700 mb-2">Have questions, want to collaborate, or discuss potential investments?</p>
+                <p class="text-gray-600 mb-4">Please email us directly at:</p>
+                <a href="mailto:aetherrobotics@proton.me" class="text-xl font-semibold mb-6 block break-all" style="color: var(--primary-color);">aetherrobotics@proton.me</a>
+                <p class="text-sm text-gray-500">We look forward to hearing from you!</p>
             </div>
         </div>
     </section>
 
     <!-- Project Detail Sections -->
-    <section id="project-cancer" class="section-padding bg-gray-50" style="padding-top: 120px;">
+    <section id="project-detail-cancer-viruses" class="project-detail-section py-16 md:py-24 bg-gray-50">
         <div class="max-w-3xl mx-auto px-6">
-            <h2 class="section-title text-3xl text-gray-900 mb-8">Cancer & Virus Targeting</h2>
+            <h2 class="section-title text-3xl md:text-4xl text-gray-900 mb-6">Project Detail: Targeting Cancer & Viruses</h2>
             <div class="card">
-                <p class="body-large mb-6">Our silicon-based nanobots represent a breakthrough in precision medicine, designed to identify and target cancer cells and viruses with unprecedented accuracy.</p>
-                <ul class="space-y-3 mb-8 text-gray-600">
-                    <li class="flex items-start"><span class="mr-3" style="color: var(--primary-color);">✓</span>High-specificity targeting of malignant cells</li>
-                    <li class="flex items-start"><span class="mr-3" style="color: var(--primary-color);">✓</span>Localized therapeutic payload delivery</li>
-                    <li class="flex items-start"><span class="mr-3" style="color: var(--primary-color);">✓</span>Minimal impact on healthy tissue</li>
-                    <li class="flex items-start"><span class="mr-3" style="color: var(--primary-color);">✓</span>Real-time monitoring capabilities</li>
+                <p class="text-gray-600 text-lg mb-4">We are developing silicon-based nanobots capable of identifying and targeting cancer cells and viruses within the body. These nanobots aim to provide precise treatments while minimizing harm to healthy tissues.</p>
+                <p class="text-gray-600 mb-4">Key Goals:</p>
+                <ul class="list-disc list-inside mb-4 ml-4 text-gray-600">
+                    <li>High specificity targeting of malignant cells or viral particles.</li>
+                    <li>Localized delivery of therapeutic payloads (e.g., drugs, radiation).</li>
+                    <li>Reduction of systemic side effects compared to traditional therapies.</li>
+                    <li>Real-time monitoring capabilities (future goal).</li>
                 </ul>
-                <a href="#projects" class="btn-secondary">← Back to Projects</a>
+                <p class="text-gray-600 mb-6">This project holds the potential to revolutionize treatment paradigms for various forms of cancer and infectious diseases.</p>
+                <a href="#projects" class="btn-primary">← Back to Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-detail-g-repair" class="project-detail-section py-16 md:py-24 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="section-title text-3xl md:text-4xl text-gray-900 mb-6">Project Detail: 🛡️ Aether A1 G-Repair</h2>
+            <div class="card">
+                <p class="text-gray-600 text-lg mb-4">G-Repair (Project Name A1) represents a groundbreaking initiative in nanotechnology, currently in the research and development phase. A working prototype is projected for completion by Q2 2028.</p>
+                <p class="text-gray-600 mb-4">While specific technical details remain proprietary, the project focuses on leveraging advanced nanotechnology to enhance DNA repair processes. This innovative approach is designed to augment cellular repair processes, offering potential applications in medical science and beyond.</p>
+                <p class="text-gray-600 mb-4">Key Focuses of G-Repair:</p>
+                <ul class="list-disc list-inside mb-4 ml-4 text-gray-600">
+                    <li><strong>Targeted Delivery:</strong> Precisely delivering DNA repair enzymes or activating factors to damaged cellular sites.</li>
+                    <li><strong>DNA Repair Mechanisms:</strong> Designing nanostructures to support or enhance natural repair pathways such as base excision repair (BER) and nucleotide excision repair (NER).</li>
+                    <li><strong>Genomic Integrity:</strong> Aiming to restore and maintain cellular function by addressing DNA damage at its source, potentially mitigating age-related decline or disease progression.</li>
+                </ul>
+                <p class="text-gray-600 mb-6">We envision G-Repair technology playing a crucial role in future preventative medicine and therapies for genetic disorders.</p>
+                <a href="#projects" class="btn-primary">← Back to Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-detail-environmental" class="project-detail-section py-16 md:py-24 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="section-title text-3xl md:text-4xl text-gray-900 mb-6">Project Detail: Environmental Nanobots</h2>
+            <div class="card">
+                <p class="text-gray-600 text-lg mb-4">Beyond healthcare, we are working on nanobots designed to tackle pressing environmental issues, offering sustainable solutions.</p>
+                <p class="text-gray-600 mb-4">Current Focus Areas:</p>
+                <ul class="list-disc list-inside mb-4 ml-4 text-gray-600">
+                    <li><strong>Oil Spill Cleanup:</strong> Developing nanobots that can efficiently break down or sequester oil molecules in marine environments, minimizing ecological damage.</li>
+                    <li><strong>Coral Reef Restoration:</strong> Envisioning the use of nanotechnology to deliver life-saving treatments directly to threatened coral reefs. This could involve targeted delivery of medicine, essential nutrients, or agents to mitigate coral bleaching and promote reef regeneration.</li>
+                </ul>
+                <p class="text-gray-600 mb-6">Our goal is to create environmentally benign nanotechnologies that actively contribute to the restoration and preservation of our planet's delicate ecosystems.</p>
+                <a href="#projects" class="btn-primary">← Back to Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-detail-hanzo-mec" class="project-detail-section py-16 md:py-24 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="section-title text-3xl md:text-4xl text-gray-900 mb-6">Project Detail: 🤖 Hanzō M.E.C (Medical & Elderly Care)</h2>
+            <div class="card">
+                <p class="text-gray-600 text-lg mb-4">The Hanzō M.E.C model (Project Z1) is specifically designed to support the Medical and Elderly Care sectors, enhancing the quality of life and providing crucial assistance.</p>
+                <p class="text-gray-600 mb-4">Key Features and Applications:</p>
+                <ul class="list-disc list-inside mb-4 ml-4 text-gray-600">
+                    <li><strong>Companionship:</strong> Providing social interaction and reducing loneliness for elderly individuals.</li>
+                    <li><strong>Daily Task Assistance:</strong> Helping with reminders, fetching items, and basic household tasks.</li>
+                    <li><strong>Health Monitoring:</strong> Integrating sensors to monitor vital signs and alert caregivers or medical professionals if necessary.</li>
+                    <li><strong>Independence Support:</strong> Enabling individuals to live more independently for longer.</li>
+                    <li><strong>Caregiver Support:</strong> Reducing the physical and emotional burden on human caregivers by handling routine tasks.</li>
+                    <li><strong>Collaboration with Physicians:</strong> Potential for remote diagnostics support and data collection.</li>
+                </ul>
+                <p class="text-gray-600 mb-6">Hanzō M.E.C aims to be a compassionate and reliable partner in healthcare settings and homes.</p>
+                <a href="#projects" class="btn-primary">← Back to Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-detail-hanzo-cem" class="project-detail-section py-16 md:py-24 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="section-title text-3xl md:text-4xl text-gray-900 mb-6">Project Detail: 🤖 Hanzō C.E.M (Construction & Manufacturing)</h2>
+            <div class="card">
+                <p class="text-gray-600 text-lg mb-4">The Hanzō C.E.M model (Project Z1) is engineered to revolutionize the Construction and Manufacturing sectors by improving efficiency, safety, and productivity.</p>
+                <p class="text-gray-600 mb-4">Key Features and Applications:</p>
+                <ul class="list-disc list-inside mb-4 ml-4 text-gray-600">
+                    <li><strong>Enhanced Stability:</strong> Four legs provide superior stability on uneven terrain common in construction sites.</li>
+                    <li><strong>Heavy Object Transport:</strong> Capable of safely lifting and moving heavy materials, reducing strain on human workers.</li>
+                    <li><strong>Environmental Awareness:</strong> A 360-degree camera system allows for comprehensive site monitoring and navigation.</li>
+                    <li><strong>Multitasking Capability:</strong> Four arms enable complex assembly, manipulation, and simultaneous task execution.</li>
+                    <li><strong>Safety Enhancement:</strong> Designed to handle hazardous tasks (e.g., working at heights, handling dangerous materials), minimizing workplace accidents.</li>
+                    <li><strong>Automation:</strong> Streamlining repetitive or physically demanding processes in manufacturing lines.</li>
+                </ul>
+                <p class="text-gray-600 mb-6">Hanzō C.E.M is built to tackle demanding industrial environments, making workers' lives easier and operations more efficient.</p>
+                <a href="#projects" class="btn-primary">← Back to Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-detail-hanzo-rai" class="project-detail-section py-16 md:py-24 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="section-title text-3xl md:text-4xl text-gray-900 mb-6">Project Detail: 🤖 Hanzō R.A.I (Retail Automation & Innovation)</h2>
+            <div class="card">
+                <p class="text-gray-600 text-lg mb-4">The Hanzō R.A.I model (Project Z1) is poised to disrupt the retail landscape by introducing innovative automation and enhancing the customer experience.</p>
+                <p class="text-gray-600 mb-4">Key Features and Applications:</p>
+                <ul class="list-disc list-inside mb-4 ml-4 text-gray-600">
+                    <li><strong>Integrated Payment System:</strong> Capable of accepting payments directly via card, cryptocurrency, and potentially cash, streamlining checkout.</li>
+                    <li><strong>Item Scanning:</strong> Utilizes an embedded camera for scanning clothing, groceries, or other retail items.</li>
+                    <li><strong>Customer Assistance:</strong> Potential for providing product information, directions, or inventory checks.</li>
+                    <li><strong>Task Automation:</strong> Can handle tasks like shelf stocking, price checking, or basic cleaning during off-hours.</li>
+                    <li><strong>Enhanced Experience:</strong> Aims to create a futuristic and efficient shopping environment.</li>
+                </ul>
+                <p class="text-gray-600 mb-6">Hanzō R.A.I represents a step towards a more automated and engaging future for the retail industry.</p>
+                <a href="#projects" class="btn-primary">← Back to Projects</a>
             </div>
         </div>
     </section>
@@ -465,16 +623,22 @@
     <footer class="bg-gray-900 text-gray-300 py-12">
         <div class="max-w-6xl mx-auto px-6 text-center">
             <p class="mb-6">&copy; 2025 Aether Robotics. All rights reserved.</p>
-            <div class="flex justify-center space-x-8 mb-6">
-                <a href="https://mirror.xyz/0x296f4f5F683A5Ba4B6b15Aa7e5850A51AC9edb6f" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-200">Mirror</a>
-                <a href="https://medium.com/@aetherrobotics" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-200">Medium</a>
+            <div class="mb-6 space-x-4">
+                <h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-2">Read Our Blog</h4>
+                <a href="https://mirror.xyz/0x296f4f5F683A5Ba4B6b15Aa7e5850A51AC9edb6f" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300">Mirror.xyz</a>
+                <span class="text-gray-500">|</span>
+                <a href="https://medium.com/@aetherrobotics" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300">Medium.com</a>
             </div>
-            <div class="flex justify-center space-x-6">
-                <a href="https://x.com/AetherRobotics" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-200">
+            <div class="space-x-4">
+                <h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-2">Follow Us</h4>
+                <a href="https://x.com/AetherRobotics" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300" aria-label="Follow us on X">
                     <i class="fab fa-twitter fa-lg"></i>
                 </a>
-                <a href="https://instagram.com/AetherRobotics" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-200">
+                <a href="https://instagram.com/AetherRobotics" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300" aria-label="Follow us on Instagram">
                     <i class="fab fa-instagram fa-lg"></i>
+                </a>
+                <a href="https://threads.net/@AetherRobotics" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300" aria-label="Follow us on Threads">
+                    <i class="fa-brands fa-threads fa-lg"></i>
                 </a>
             </div>
         </div>
@@ -488,12 +652,15 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when clicking links
-        const mobileLinks = document.querySelectorAll('#mobile-menu a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
+        function closeMobileMenu() {
+            if (!mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
-            });
+            }
+        }
+
+        const allLinks = document.querySelectorAll('a[href^="#"]');
+        allLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
         });
     </script>
 
