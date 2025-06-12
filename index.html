@@ -1,9 +1,1147 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aether Robotics</title><link rel="stylesheet" href="styles.css"></head><body>
-<nav><div class="nav-left"><a href="index.html">Aether Robotics</a></div>
-<div class="nav-right"><a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Projects</a><a href="values.html">Values</a><a href="contribute.html">Contribute</a><a href="contact.html">Contact</a></div></nav>
-<section class="hero"><h1>The future of robotics.<br><span class="gradient">Designed today.</span></h1>
-<p>Aether Robotics is a pioneering startup based in the USA and Japan, dedicated to advancing <strong>humanoid robotics</strong> and <strong>nanorobotics</strong>.</p>
-<p style="margin-top: 2rem;"><a href="projects.html" class="btn-primary">Explore Our Projects</a></p></section>
-<footer>&copy; 2025 Aether Robotics. All rights reserved.</footer></body></html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aether Robotics - Advancing Humanoid & Nanorobotics</title>
+    <meta name="description" content="Aether Robotics - Pioneering startup in humanoid robotics and nanorobotics based in USA and Japan">
+    <meta name="keywords" content="robotics, nanorobotics, humanoid robots, AI, healthcare technology">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Define CSS Variables for consistent theming */
+        :root {
+            --primary-color: rgb(117, 200, 200); /* Main accent color */
+            --primary-hover: rgb(97, 180, 180);   /* Darker shade for hover states */
+            --primary-light: rgba(117, 200, 200, 0.1); /* Light tint for backgrounds/icons */
+            --primary-border: rgba(117, 200, 200, 0.2);/* Border color for primary elements */
+            --text-primary: #1d1d1f; /* Dark text for headings and main content */
+            --text-secondary: #6e6e73; /* Lighter text for paragraphs and descriptions */
+            --text-tertiary: #86868b; /* Even lighter text, often for notes or secondary info */
+            --surface: #f5f5f7; /* Light background for sections */
+            --surface-elevated: rgba(255, 255, 255, 0.8); /* Semi-transparent white for cards, with backdrop blur */
+            --border-light: rgba(0, 0, 0, 0.08); /* Light border for subtle separation */
+        }
+        
+        /* Universal box-sizing for all elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Base body styles for typography and background */
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif; /* Apple-like font stack */
+            font-weight: 400;
+            line-height: 1.47059;
+            letter-spacing: -0.022em;
+            color: var(--text-primary);
+            background: #fff;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            padding-top: 44px; /* Space for the fixed navigation bar */
+        }
+        
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation Bar Styles */
+        .nav {
+            position: fixed; /* Fixes nav to the top */
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100; /* Ensures nav is above other content */
+            background: rgba(255, 255, 255, 0.72); /* Semi-transparent background */
+            backdrop-filter: saturate(180%) blur(20px); /* Frosted glass effect */
+            border-bottom: 1px solid var(--border-light); /* Subtle bottom border */
+            transition: all 0.3s ease; /* Smooth transitions for any changes */
+        }
+        
+        .nav-content {
+            max-width: 1200px; /* Max width for content */
+            margin: 0 auto; /* Center content horizontally */
+            padding: 0 22px; /* Horizontal padding */
+            height: 44px; /* Fixed height for the nav bar */
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Distribute items with space between */
+        }
+        
+        .nav-logo {
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+        
+        .nav-logo .accent {
+            color: var(--primary-color); /* Highlight color for part of the logo */
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px; /* Space between nav links */
+        }
+        
+        .nav-link {
+            font-size: 17px;
+            font-weight: 400;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: opacity 0.3s ease; /* Smooth hover effect */
+            cursor: pointer;
+        }
+        
+        .nav-link:hover {
+            opacity: 0.8; /* Dim on hover */
+        }
+        
+        .nav-link.active {
+            color: var(--primary-color); /* Highlight active link */
+            font-weight: 500;
+        }
+        
+        /* Mobile Menu Button (hidden by default on desktop) */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 17px;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+        
+        /* Mobile Navigation Menu */
+        .mobile-nav {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 44px; /* Position below the main nav */
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95); /* More opaque background */
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--border-light);
+            padding: 20px 22px;
+            flex-direction: column; /* Stack links vertically */
+            gap: 12px;
+        }
+        
+        .mobile-nav.active {
+            display: flex; /* Show when active */
+        }
+        
+        .mobile-nav .nav-link {
+            display: block; /* Make links block-level */
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-light); /* Separator between links */
+        }
+        
+        .mobile-nav .nav-link:last-child {
+            border-bottom: none; /* No border for the last link */
+        }
+
+        /* Language Switcher Styles */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            margin-left: 32px; /* Space from last nav link */
+        }
+
+        .lang-switcher a, .lang-switcher span {
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            color: var(--text-secondary);
+        }
+
+        .lang-switcher .active-lang {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+        }
+
+        .lang-switcher a:hover {
+            background-color: rgba(0, 0, 0, 0.04);
+        }
+        .lang-switcher .separator {
+            color: var(--text-tertiary);
+            margin: 0 8px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh; /* Full viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 22px 50px; /* Padding for content */
+            background: linear-gradient(135deg, #fafafa 0%, var(--surface) 100%); /* Gradient background */
+        }
+        
+        .hero-content {
+            max-width: 900px;
+        }
+        
+        .hero-title {
+            font-size: clamp(48px, 8vw, 96px); /* Responsive font size */
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.015em;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(21px, 3vw, 28px);
+            font-weight: 400;
+            line-height: 1.29;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .accent-text {
+            color: var(--primary-color); /* Highlight color for text */
+        }
+        
+        /* Primary Button Style */
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            font-size: 17px;
+            font-weight: 500;
+            padding: 12px 24px;
+            border-radius: 980px; /* Pill shape */
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px); /* Slight lift on hover */
+        }
+        
+        /* Secondary Button Style */
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* General Section Styles */
+        .section {
+            padding: 100px 22px; /* Vertical and horizontal padding for sections */
+        }
+        
+        .container {
+            max-width: 1200px; /* Max width for section content */
+            margin: 0 auto; /* Center content */
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 700;
+            line-height: 1.07;
+            letter-spacing: -0.015em;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+        
+        .section-subtitle {
+            font-size: 21px;
+            font-weight: 400;
+            line-height: 1.29;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .content-text {
+            font-size: 19px;
+            font-weight: 400;
+            line-height: 1.42;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+        
+        .content-text strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 40px;
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Two columns, responsive */
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Three columns, responsive */
+        }
+        
+        /* Card Styles (general purpose) */
+        .card {
+            background: var(--surface-elevated);
+            /* Liquid Glass Effect */
+            backdrop-filter: saturate(180%) blur(30px); /* Increased blur */
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.05) 100%); /* Subtle gradient for light reflection */
+            background-blend-mode: overlay; /* Blends gradient with existing background */
+            border-radius: 18px;
+            padding: 40px;
+            border: 1px solid var(--border-light);
+            transition: all 0.4s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px); /* Lift effect on hover */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Shadow effect on hover */
+        }
+        
+        .card-title {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.17;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        
+        .card-text {
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 1.47;
+            color: var(--text-secondary);
+        }
+        
+        /* Project Card Specific Styles */
+        .project-card {
+            background: white;
+            border-radius: 18px;
+            padding: 40px;
+            border: 1px solid var(--border-light);
+            transition: all 0.4s ease;
+            height: 100%; /* Ensure cards are same height in a row */
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-emoji {
+            font-size: 40px; /* Emoji sizing */
+            margin-bottom: 20px;
+        }
+
+        .project-icon-fa {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-light);
+            border-radius: 12px;
+        }
+        
+        .project-title {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.17;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        
+        .project-description {
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 1.47;
+            color: var(--text-secondary);
+            flex-grow: 1; /* Allows description to take available space */
+            margin-bottom: 20px;
+        }
+        
+        .project-link {
+            color: var(--primary-color);
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 17px;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-link:hover {
+            opacity: 0.8;
+        }
+        
+        /* Values Grid Specific Styles */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .value-item {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .value-icon {
+            font-size: 48px;
+            margin-bottom: 24px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary-light);
+            border-radius: 16px;
+            margin-left: auto;
+            margin-right: auto; /* Center the icon */
+        }
+        
+        .value-title {
+            font-size: 21px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        
+        .value-text {
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 1.47;
+            color: var(--text-secondary);
+        }
+        
+        /* Contribution Section Specific Styles */
+        .crypto-section {
+            background: var(--surface);
+            border-radius: 18px;
+            padding: 40px;
+            margin-top: 40px;
+            /* Liquid Glass Effect */
+            backdrop-filter: saturate(180%) blur(20px);
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
+            background-blend-mode: overlay;
+            border: 1px solid var(--border-light);
+        }
+        
+        .crypto-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--text-primary);
+        }
+        
+        .crypto-item {
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .crypto-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .crypto-label {
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+        
+        .crypto-address {
+            background: rgba(0, 0, 0, 0.04);
+            padding: 16px;
+            border-radius: 12px;
+            font-family: 'SF Mono', Monaco, monospace; /* Monospaced font for addresses */
+            font-size: 15px;
+            word-break: break-all; /* Ensures long addresses wrap */
+            margin: 8px 0;
+            color: var(--text-primary);
+        }
+        
+        .crypto-note {
+            font-size: 15px;
+            color: var(--text-tertiary);
+            font-style: italic;
+        }
+        
+        /* Contact Section Specific Styles */
+        .contact-card {
+            background: var(--surface);
+            border-radius: 18px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-top: 40px;
+            /* Liquid Glass Effect */
+            backdrop-filter: saturate(180%) blur(20px);
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
+            background-blend-mode: overlay;
+            border: 1px solid var(--border-light);
+        }
+        
+        .contact-email {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 20px 0;
+            display: block;
+            word-break: break-all;
+        }
+        
+        .contact-email:hover {
+            opacity: 0.8;
+        }
+        
+        /* Footer Styles */
+        .footer {
+            background: var(--text-primary); /* Dark background */
+            color: white;
+            padding: 60px 22px 40px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.8); /* Lighter text for links */
+            text-decoration: none;
+            font-size: 17px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: white; /* Brighter on hover */
+        }
+        
+        .footer-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 15px;
+        }
+
+        /* Line separator under section headers */
+        .section-header .line {
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 0 auto 24px; /* Center the line */
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hide desktop nav links */
+            }
+            
+            .mobile-menu-btn {
+                display: block; /* Show mobile menu button */
+            }
+            
+            .grid-2 {
+                grid-template-columns: 1fr; /* Single column layout for 2-column grids */
+            }
+            
+            .grid-3 {
+                grid-template-columns: 1fr; /* Single column layout for 3-column grids */
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr; /* Single column for values */
+            }
+            
+            .section {
+                padding: 60px 22px; /* Reduced section padding */
+            }
+            
+            .card, .project-card {
+                padding: 30px; /* Reduced card padding */
+            }
+            
+            .footer-links {
+                flex-direction: column; /* Stack footer links vertically */
+                gap: 16px;
+            }
+
+            /* Adjust button spacing for mobile */
+            .card > div[style*="display: flex"] {
+                flex-direction: column;
+                gap: 15px !important; /* Important to override inline style */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-content {
+                padding: 0 16px; /* Further reduced nav padding */
+            }
+            
+            .section {
+                padding: 40px 16px; /* Further reduced section padding */
+            }
+            
+            .hero {
+                padding: 80px 16px 40px; /* Further reduced hero padding */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="#home" class="nav-logo">
+                <span class="accent">Aether</span>Robotics
+            </a>
+            <div class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#why-aether" class="nav-link">Why Aether?</a> <!-- New Nav Link -->
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#values" class="nav-link">Values</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contribute" class="nav-link">Contribute</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <div class="lang-switcher">
+                    <span class="active-lang">EN</span>
+                    <span class="separator">|</span>
+                    <a href="https://quielorodriguez.github.io/aether-robotics-jp/" hreflang="ja">JA</a>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#why-aether" class="nav-link">Why Aether?</a> <!-- New Nav Link -->
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#values" class="nav-link">Values</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#contribute" class="nav-link">Contribute</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <div class="lang-switcher" style="padding: 12px 0;">
+                <span class="active-lang">EN</span>
+                <span class="separator">|</span>
+                <a href="https://quielorodriguez.github.io/aether-robotics-jp/" hreflang="ja">JA</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                The future of robotics.<br>
+                <span class="accent-text">Designed today.</span>
+            </h1>
+            <p class="hero-subtitle">
+                A pioneering startup based in the USA and Japan, dedicated to advancing humanoid robotics and nanorobotics for a better tomorrow.
+            </p>
+            <a href="#why-aether" class="btn">Discover Our Potential</a>
+        </div>
+    </section>
+    
+    <!-- Innovation Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Innovation at the Intersection</h2>
+                <p class="section-subtitle">Where cutting-edge technology meets human need</p>
+                <div class="line"></div>
+            </div>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 class="card-title">Nanorobotics</h3>
+                    <p class="card-text">Revolutionary nanobots targeting cancer cells, cleaning environments, and restoring ecosystems with unprecedented precision. A multi-trillion dollar market opportunity in healthcare and environmental tech.</p>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">Humanoid Robotics</h3>
+                    <p class="card-text">Advanced humanoid systems transforming healthcare, construction, and retail through intelligent automation. Poised to redefine labor and productivity across global industries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section: Why Aether Robotics? (Investor-focused) -->
+    <section id="why-aether" class="section" style="padding-top: 100px;">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Why Aether Robotics?</h1>
+                <p class="section-subtitle">The Strategic Advantage for Visionary Investors</p>
+                <div class="line"></div>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 class="card-title">Disruptive IP & Technology</h3>
+                    <p class="card-text">Our patented breakthroughs in silicon-based nanobotics and advanced humanoid locomotion establish an unassailable competitive moat. We are not just participating in the future; we are building it, piece by molecular piece, and with every agile step of our humanoids.</p>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">Massive Untapped Markets</h3>
+                    <p class="card-text">From precision medicine with nanobots fighting disease at its source, to humanoid automation revolutionizing industries like elderly care and hazardous construction, Aether Robotics targets multi-trillion dollar markets ripe for disruption and unprecedented growth.</p>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">Visionary Leadership & Talent</h3>
+                    <p class="card-text">Led by a team of world-renowned roboticists, AI pioneers, and strategic thinkers, Aether Robotics embodies the convergence of audacious vision and meticulous execution. Our global team, spanning the USA and Japan, is singularly focused on delivering revolutionary solutions.</p>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">Scalability & Ecosystem Synergy</h3>
+                    <p class="card-text">Our modular designs and adaptable AI frameworks ensure our technologies are inherently scalable across diverse applications. Integrating Aether Robotics means not just acquiring a company, but gaining a future-proof platform ready to expand into countless new products and services.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="#contribute" class="btn">Partner with Aether Robotics</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Page Section -->
+    <section id="projects" class="section" style="padding-top: 100px;">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Our Projects</h1>
+                <p class="section-subtitle">Transforming industries through innovative robotics</p>
+                <div class="line"></div>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="project-card">
+                    <div class="project-icon-fa">🛡️</div>
+                    <h3 class="project-title">Cancer & Virus Targeting</h3>
+                    <p class="project-description">Developing silicon-based nanobots to identify and target cancer cells and viruses, aiming for precise treatments while minimizing harm to healthy tissues. This represents a paradigm shift in medical intervention.</p>
+                    <a href="#project-cancer" class="project-link">Learn More →</a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon-fa">🧬</div>
+                    <h3 class="project-title">Aether A1 G-Repair</h3>
+                    <p class="project-description">A groundbreaking nanotechnology initiative focused on enhancing DNA repair processes, contributing to cellular integrity and longevity. A cornerstone for future anti-aging and regenerative medicine.</p>
+                    <a href="#project-repair" class="project-link">Learn More →</a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon-fa">🌱</div>
+                    <h3 class="project-title">Environmental Nanobots</h3>
+                    <p class="project-description">Designing nanobots to clean oil spills and deliver life-saving treatments to coral reefs, promoting ecological health and sustainability. Addressing critical global environmental crises with microscopic precision.</p>
+                    <a href="#project-environment" class="project-link">Learn More →</a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon-fa">👩‍⚕️</div>
+                    <h3 class="project-title">Hanzō M.E.C</h3>
+                    <p class="project-description">Humanoid robot for Medical & Elderly Care. Key applications include companionship, daily task assistance, and health monitoring. Revolutionizing elder care and hospital support with intelligent, empathetic assistance.</p>
+                    <a href="#project-mec" class="project-link">Learn More →</a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon-fa">🏗️</div>
+                    <h3 class="project-title">Hanzō C.E.M</h3>
+                    <p class="project-description">Humanoid robot for Construction & Manufacturing. Features four legs, 360° camera, four arms, and handles hazardous tasks safely. Enhancing safety and efficiency in high-risk industrial environments.</p>
+                    <a href="#project-cem" class="project-link">Learn More →</a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon-fa">🛒</div>
+                    <h3 class="project-title">Hanzō R.A.I</h3>
+                    <p class="project-description">Humanoid robot for Retail Automation & Innovation. Features integrated payments and item scanning via embedded camera. Streamlining retail operations and elevating the customer experience through autonomous service.</p>
+                    <a href="#project-rai" class="project-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Detail Sections (Follow Projects Section) -->
+    <section id="project-cancer" class="section" style="padding-top: 100px;">
+        <div class="container" style="max-width: 900px;">
+            <div class="section-header">
+                <h2 class="section-title">Cancer & Virus Targeting</h2>
+                <div class="line"></div>
+            </div>
+            <div class="card">
+                <p class="content-text" style="margin-bottom: 20px;">Our silicon-based nanobots represent a breakthrough in precision medicine, designed to identify and target cancer cells and viruses with unprecedented accuracy. This initiative promises to redefine therapeutic approaches globally.</p>
+                <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>High-specificity targeting of malignant cells</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Localized therapeutic payload delivery</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Minimal impact on healthy tissue</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Real-time monitoring capabilities</li>
+                </ul>
+                <a href="#projects" class="btn-secondary btn" style="margin-top: 20px; display: inline-block;">← Back to Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-repair" class="section" style="padding-top: 100px;">
+        <div class="container" style="max-width: 900px;">
+            <div class="section-header">
+                <h2 class="section-title">Aether A1 G-Repair</h2>
+                <div class="line"></div>
+            </div>
+            <div class="card">
+                <p class="content-text" style="margin-bottom: 20px;">The Aether A1 G-Repair project focuses on developing groundbreaking nanotechnology to enhance the body's natural DNA repair processes, contributing to cellular integrity and longevity. This fundamental research holds the key to extended human healthspans.</p>
+                <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Enhances natural DNA repair mechanisms</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Aims to improve cellular longevity</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Potential for anti-aging applications</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Prototype projected for Q2 2028</li>
+                </ul>
+                <a href="#projects" class="btn-secondary btn" style="margin-top: 20px; display: inline-block;">← Back to Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-environment" class="section" style="padding-top: 100px;">
+        <div class="container" style="max-width: 900px;">
+            <div class="section-header">
+                <h2 class="section-title">Environmental Nanobots</h2>
+                <div class="line"></div>
+            </div>
+            <div class="card">
+                <p class="content-text" style="margin-bottom: 20px;">Our environmental nanobots are designed to tackle critical ecological challenges, from mitigating pollution to restoring damaged ecosystems. These solutions are vital for global environmental sustainability and climate resilience.</p>
+                <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Efficient oil spill cleanup and remediation</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Targeted delivery of treatments to coral reefs</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Promotes ecological health and biodiversity</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Minimal environmental footprint</li>
+                </ul>
+                <a href="#projects" class="btn-secondary btn" style="margin-top: 20px; display: inline-block;">← Back to Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-mec" class="section" style="padding-top: 100px;">
+        <div class="container" style="max-width: 900px;">
+            <div class="section-header">
+                <h2 class="section-title">Hanzō M.E.C (Medical & Elderly Care)</h2>
+                <div class="line"></div>
+            </div>
+            <div class="card">
+                <p class="content-text" style="margin-bottom: 20px;">Hanzō M.E.C is a compassionate humanoid robot designed to support medical professionals and provide essential assistance to the elderly. This innovation addresses critical labor shortages and enhances quality of life in healthcare.</p>
+                <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Provides companionship and emotional support</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Assists with daily tasks and mobility</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Monitors vital signs and health metrics</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Alerts caregivers in case of emergencies</li>
+                </ul>
+                <a href="#projects" class="btn-secondary btn" style="margin-top: 20px; display: inline-block;">← Back to Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-cem" class="section" style="padding-top: 100px;">
+        <div class="container" style="max-width: 900px;">
+            <div class="section-header">
+                <h2 class="section-title">Hanzō C.E.M (Construction & Manufacturing)</h2>
+                <div class="line"></div>
+            </div>
+            <div class="card">
+                <p class="content-text" style="margin-bottom: 20px;">Hanzō C.E.M is a robust humanoid robot engineered for demanding tasks in construction and manufacturing environments. Its capabilities promise to reshape safety standards and operational efficiencies in heavy industries.</p>
+                <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Four legs for enhanced stability on uneven terrain</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>360° camera for comprehensive situational awareness</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Four independent arms for complex manipulation</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Handles hazardous tasks safely, reducing human risk</li>
+                </ul>
+                <a href="#projects" class="btn-secondary btn" style="margin-top: 20px; display: inline-block;">← Back to Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-rai" class="section" style="padding-top: 100px;">
+        <div class="container" style="max-width: 900px;">
+            <div class="section-header">
+                <h2 class="section-title">Hanzō R.A.I (Retail Automation & Innovation)</h2>
+                <div class="line"></div>
+            </div>
+            <div class="card">
+                <p class="content-text" style="margin-bottom: 20px;">Hanzō R.A.I revolutionizes the retail experience, automating tasks and enhancing customer interaction with integrated smart features. This intelligent automation solution provides a competitive edge in the rapidly evolving retail sector.</p>
+                <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Integrated payment systems for seamless transactions</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Item scanning via embedded camera for inventory management</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Customer assistance and information provision</li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center; font-size: 17px; color: var(--text-secondary);"><span style="margin-right: 12px; color: var(--primary-color); font-size: 20px;">✓</span>Optimizes store operations and customer satisfaction</li>
+                </ul>
+                <a href="#projects" class="btn-secondary btn" style="margin-top: 20px; display: inline-block;">← Back to Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Page Section -->
+    <section id="values" class="section" style="padding-top: 100px;">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Our Core Values</h1>
+                <p class="section-subtitle">The principles that guide our innovation</p>
+                <div class="line"></div>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">🧠</div>
+                    <h3 class="value-title">AI-Driven Innovation</h3>
+                    <p class="value-text">Embracing AI to enhance our nanorobots and humanoid systems, ensuring smarter, faster, and more impactful solutions.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">🌿</div>
+                    <h3 class="value-title">Sustainability & Responsibility</h3>
+                    <p class="value-text">Focusing on nano-robots that address critical environmental challenges like oil spills and coral reef restoration with minimal ecological impact.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">🤝</div>
+                    <h3 class="value-title">Collaboration & Ecosystem</h3>
+                    <p class="value-text">Fostering partnerships across public, private, and research sectors to drive progress and build a thriving innovation ecosystem.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">💡</div>
+                    <h3 class="value-title">Empowering Talent & Creativity</h3>
+                    <p class="value-text">Nurturing a culture of creativity and continuous learning, equipping our team with skills for an AI-driven economy.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">🌍</div>
+                    <h3 class="value-title">Impact for Public Good</h3>
+                    <p class="value-text">Striving to create technologies that improve lives through targeted healthcare, environmental protection, and societal benefits.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">🛡️</div>
+                    <h3 class="value-title">Ethical Development & Safety</h3>
+                    <p class="value-text">Committing to the responsible design, development, and deployment of our technologies, prioritizing safety, transparency, and ethical considerations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Page Section -->
+    <section id="about" class="section" style="padding-top: 100px;">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Aether Robotics: Beyond the Horizon</h1>
+                <p class="section-subtitle">Forging a future where human ingenuity and robotic evolution converge.</p>
+                <div class="line"></div>
+            </div>
+            
+            <div class="grid grid-2">
+                <div>
+                    <h2 class="card-title">Our Vision & Purpose</h2>
+                    <p class="content-text">
+                        At Aether Robotics, our mission transcends mere engineering; it is about orchestrating a new era of human capability. We are driven by the conviction that technology, when infused with visionary design and profound purpose, can unlock a future once deemed impossible. From our pioneering roots in the <strong>United States</strong> to our expanding presence in <strong>Japan</strong>, we unite diverse perspectives to fundamentally redefine existence through advanced robotics.
+                    </p>
+                    <p class="content-text">
+                        We immerse ourselves in the intricate dance of molecular engineering and intelligent autonomy, envisioning a world where nanobots not only heal and cleanse but also reshape industries, and humanoids seamlessly augment human potential. This is not simply about building machines; it's about extending the very essence of human ingenuity, crafting tools that empower, protect, and profoundly enhance our collective experience.
+                    </p>
+                </div>
+                <div>
+                    <h2 class="card-title">Unveiling Impact, Redefining Industries</h2>
+                    <p class="content-text">
+                        Our creations are destined to ripple far beyond the confines of our labs, reshaping the fundamental fabric of global society and commerce. Imagine nanobots performing cellular repairs with unparalleled precision, or humanoids transforming supply chains and personalized care. This is the future we are not just predicting, but actively engineering—a future where human aspirations are amplified by intelligent machines, leading to new markets, unparalleled efficiencies, and previously unimaginable levels of human well-being.
+                    </p>
+                    <p class="content-text">
+                        This platform stands as a testament to our relentless pursuit of what's next. We invite you to explore the depth of our innovation, understand the strategic opportunities our technologies present, and join us in shaping a future where the audacious vision of Aether Robotics becomes an indispensable reality. This is more than technology; it is a profound transformation.
+                    </p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="#values" class="btn-secondary btn">Discover Our Values</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contribute Page Section -->
+    <section id="contribute" class="section" style="padding-top: 100px;">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Support Our Vision</h1>
+                <p class="section-subtitle">Your contribution accelerates the development of transformative robotic technologies</p>
+                <div class="line"></div>
+            </div>
+            
+            <div class="card" style="text-align: center; margin-bottom: 40px;">
+                <h3 class="card-title">Secure Online Payments</h3>
+                <p class="card-text" style="margin-bottom: 30px;">Donate easily using PayPal or Stripe. Both platforms use industry-standard encryption and robust security measures.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://www.paypal.com/ncp/payment/ZVZ9EEK4WTQPA" target="_blank" class="btn"><i class="fab fa-paypal mr-2"></i>Donate with PayPal</a>
+                    <a href="https://buy.stripe.com/6oEdSg5whbJ02TS5kk" target="_blank" class="btn"><i class="fas fa-credit-card mr-2"></i>Donate with Stripe</a>
+                </div>
+            </div>
+            
+            <div class="crypto-section">
+                <h3 class="crypto-title">Cryptocurrency Donations</h3>
+                <p style="text-align: center; color: var(--text-secondary); margin-bottom: 40px;">
+                    We welcome contributions via various cryptocurrencies. Please ensure you send the correct currency to the corresponding address.</p>
+                
+                <div class="crypto-item">
+                    <div class="crypto-label">Ethereum-Based (ERC-20 & Others)</div>
+                    <p class="crypto-note">Networks: Optimism, Ethereum, Base, Arbitrum, Gravity, Polygon, Zora, Blast, Degen, and more</p>
+                    <div class="crypto-address">0x296f4f5F683A5Ba4B6b15Aa7e5850A51AC9edb6f</div>
+                </div>
+
+                <div class="crypto-item">
+                    <div class="crypto-label">Bitcoin (BTC)</div>
+                    <div class="crypto-address">bc1qw059p5f02jhmrskt370r5f09mtscwmwrqzr9hy</div>
+                </div>
+
+                <div class="crypto-item">
+                    <div class="crypto-label">Solana (SOL)</div>
+                    <div class="crypto-address">5s8zbZN1NEkT7crUg1wtJJDt9Usiz5pj6Lda1qCEJWgX</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" style="padding-top: 100px;">
+        <div class="container" style="max-width: 900px;">
+            <div class="section-header">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="line"></div>
+            </div>
+            <div class="contact-card">
+                <p class="content-text" style="margin-bottom: 20px;">Ready to collaborate, invest, or learn more about our innovations?</p>
+                <a href="mailto:aetherobotics@icloud.com" class="contact-email">aetherobotics@icloud.com</a>
+                <p class="card-text">We're excited to hear from you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text" style="margin-bottom: 32px;">&copy; 2025 Aether Robotics. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://mirror.xyz/0x296f4f5F683A5Ba4B6b15Aa7e5850A51AC9edb6f" target="_blank" rel="noopener noreferrer" class="footer-link">Mirror</a>
+                <a href="https://medium.com/@aetherrobotics" target="_blank" rel="noopener noreferrer" class="footer-link">Medium</a>
+                <a href="https://x.com/AetherRobotics" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+                <a href="https://instagram.com/Aether_Robotics" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileNav = document.getElementById('mobileNav');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            // Function to toggle mobile menu visibility
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileNav.classList.toggle('active');
+            });
+
+            // Close mobile menu when a navigation link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (mobileNav.classList.contains('active') && mobileNav.contains(e.target)) {
+                        mobileNav.classList.remove('active');
+                    }
+                });
+            });
+
+            // Add smooth scrolling for all internal anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        console.error(`Target element with ID "#${targetId}" not found.`);
+                    }
+                });
+            });
+
+            // Set active class on nav links based on current section in view
+            const sections = document.querySelectorAll('section[id]');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 60; 
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                document.querySelectorAll(`.nav-link[href*="#${current}"]`).forEach(link => {
+                    link.classList.add('active');
+                });
+            });
+
+            // Set active class for initial load based on URL hash or default to home
+            const initialHash = window.location.hash.substring(1);
+            if (initialHash) {
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href').includes(initialHash)) {
+                        link.classList.add('active');
+                    }
+                });
+            } else {
+                document.querySelector('.nav-link[href="#home"]').classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
